@@ -1,4 +1,3 @@
-import { Window } from 'dom';
 import LCUStateDefaults from './lcuState.json';
 
 declare global {
