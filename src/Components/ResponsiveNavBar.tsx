@@ -14,21 +14,27 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FathymLogo from './FathymLogo';
 
-const pages = [
-                {Title: 'Open Biotech', Link: 'https://www.openbiotech.co/'},
-                {Title: 'Fathym', Link: 'https://www.fathym.com/'},
-                {Title: 'Blog', Link: 'https://www.fathym.com/blog'}
-              ];
-const settings = ['Profile', 'Account', 'Settings', 'Logout'];
+interface Page {
+  Title: string;
+  Link: string;
+}
 
-function ResponsiveNavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const pages: Page[] = [
+  { Title: 'Open Biotech', Link: 'https://www.openbiotech.co/' },
+  { Title: 'Fathym', Link: 'https://www.fathym.com/' },
+  { Title: 'Blog', Link: 'https://www.fathym.com/blog' },
+];
 
-  const handleOpenNavMenu = (event) => {
+const settings: string[] = ['Profile', 'Account', 'Settings', 'Logout'];
+
+const ResponsiveNavBar: React.FC = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -91,7 +97,7 @@ function ResponsiveNavBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} href={page.Link}>
+                <MenuItem key={page.Title} onClick={handleCloseNavMenu} component={Link} href={page.Link}>
                   {page.Title}
                 </MenuItem>
               ))}
@@ -118,10 +124,10 @@ function ResponsiveNavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.Title}
                 onClick={handleCloseNavMenu}
                 href={page.Link}
-                style={{textAlign: 'center'}}
+                style={{ textAlign: 'center' }}
                 sx={{ my: 2, ml: 2, color: 'custom', display: 'block' }}
               >
                 {page.Title}
