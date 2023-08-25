@@ -1,8 +1,15 @@
+import { Window } from 'dom';
 import LCUStateDefaults from './lcuState.json';
 
-const lcuState = window.LCU?.State || {};
+declare global {
+  interface Window {
+    LCU?: {
+      State: any;
+    };
+  }
+}
 
-const lcuStateDefaults = {};
+const lcuState = window.LCU?.State || {};
 
 const LCUState = { ...LCUStateDefaults, ...(lcuState || {}) };
 
