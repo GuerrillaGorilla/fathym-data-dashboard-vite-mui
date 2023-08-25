@@ -26,7 +26,7 @@ import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 import ResponsiveNavBar from './Components/ResponsiveNavBar';
 import _ from "lodash";
-import FathymLogo, { FathymLogoMad, FathymLogoSad } from './Components/FathymLogo';
+import { FathymLogo, FathymLogoMad, FathymLogoSad } from './Components/FathymLogo';
 import { convertUnitsTo } from './Controls/Convert';
 import Footer from './Components/Footer';
 

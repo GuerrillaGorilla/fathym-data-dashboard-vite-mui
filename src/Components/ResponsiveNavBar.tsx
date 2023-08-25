@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import FathymLogo from './FathymLogo';
+import { FathymLogo } from '../Components/FathymLogo';
 
 interface Page {
   Title: string;
@@ -48,7 +48,7 @@ const ResponsiveNavBar: React.FC = () => {
 
   return (
     <AppBar position="fixed" color="custom" >
-      <Container maxWidth="x2">
+      <Container>
         <Toolbar disableGutters>
           <FathymLogo color="primary" fontSize="large" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography

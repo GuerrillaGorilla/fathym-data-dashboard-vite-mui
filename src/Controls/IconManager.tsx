@@ -9,7 +9,7 @@ import { WiCloudy, WiDaySunny, WiHot, WiStrongWind, WiCloudyGusts, WiRain, WiSho
 import { TbArrowUpCircle, TbGauge, TbArrowUpRightCircle, TbArrowUpLeftCircle, TbArrowRightCircle, TbArrowLeftCircle, TbArrowDownCircle, TbArrowDownRightCircle, TbArrowDownLeftCircle } from "react-icons/tb";
 import { SvgIcon, SvgIconProps } from '@mui/material';  
 import { IconContext } from 'react-icons/lib';
-import FathymLogo from '../Components/FathymLogo';
+import { FathymLogo } from '../Components/FathymLogo';
 import Typography from '@mui/material/Typography'; 
 import React from "react";
 
@@ -43,8 +43,8 @@ interface MappedIcon {
 
 export interface IconDisplayProps { 
   iconName: IconName;
-  currentColor: string;
-  iconSize: string;
+  currentColor?: string;
+  iconSize?: string;
 }
 
 export interface IconFormatProps { 
