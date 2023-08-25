@@ -1,7 +1,5 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { Box } from '@mui/material';
-import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import HeroCard from '../Controls/HeroCard';
 import { IconFormat, IconFormatProps } from '../Controls/IconManager';
@@ -71,8 +69,8 @@ export default class HeroDataVals extends React.Component<
     //console.log(datas);
 
     return datas?.length > 0 ? (
-        datas.map((data, i) => {
-          const dataLength = data.datasets[0].data.length - 1;
+        datas.map((data, _i) => {
+          //const dataLength = data.datasets[0].data.length - 1;
           var currentIcon: IconFormatProps = {
             iconNames: ["default"],
             iconColors: ["grey"],

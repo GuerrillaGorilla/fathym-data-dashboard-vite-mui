@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import TooHot from '../Images/toohot.png';
@@ -17,7 +15,7 @@ interface HeroCardProps {
   unit: string;
 }
 
-export default function HeroCard({ icon, title, content, image, unit }: HeroCardProps): JSX.Element {
+export default function HeroCard({ icon, title, content, unit }: HeroCardProps): JSX.Element {
   return (
     <Box sx={{ maxWidth: 345, backgroundImage: { xs: `url('${TooCold}')`, md: `url('${TooHot}')` },
     backgroundRepeat: "no-repeat" }}>

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import Charts, { ChartState } from './Controls/Charts';
-import LCUState from './lcuState.js';
+import LCUState from './lcuState';
 import CurrentVals, { CurrentValState } from './Controls/Currentval';
 import { HeroValState } from './Controls/Hero';
 import HeroDataVals, { HeroDataValState } from './Controls/HeroData';
@@ -262,7 +262,7 @@ export default class App extends React.Component<AppProperties, AppState> {
                 <Box sx={{ m: 2, mt: 11 }} >
                   <TextField id="outlined-basic" label="Location" variant="outlined" sx={{ mr: 1, width: { xs: '100%', md: '30%' } }}
                     value={this.state.Location.Name}
-                    onChange={(e: any) => this.onLocationChange(e)} onKeyDown={(e: any) => e.key === 'Enter' ? this.geocode() : ''} />
+                    onChange={(e) => this.onLocationChange(e)} onKeyDown={e => e.key === 'Enter' ? this.geocode() : ''} />
                 </Box>
               ) : (
                 <Box sx={{ m: 2 }} >
@@ -296,7 +296,7 @@ export default class App extends React.Component<AppProperties, AppState> {
                 {variableOptions}
               </Select>
 
-              <Button onClick={(e: any) => this.geocode()} sx={{ mt: { xs: 2, md: 0 }, ml: { md: 2 } }} >Load Forecast</Button>
+              <Button onClick={(_e) => this.geocode()} sx={{ mt: { xs: 2, md: 0 }, ml: { md: 2 } }} >Load Forecast</Button>
             </Box>
             <Box sx={{ m: 2 }} >
               <HeroShellVals currentHero={this.state.DisplayHero}>
@@ -400,7 +400,7 @@ export default class App extends React.Component<AppProperties, AppState> {
     mql.matches ? darkness = true : darkness = false;
     this.setState({ IsDark: darkness });
 
-    mql.addEventListener("change", (event) => {
+    mql.addEventListener("change", (_event) => {
       mql.matches ? darkness = true : darkness = false;
       this.setState({ IsDark: darkness })
     });
@@ -544,7 +544,7 @@ export default class App extends React.Component<AppProperties, AppState> {
 
     let pointSeconds = Array.apply(null, Array(hours));
 
-    pointSeconds = pointSeconds.map((v, i) => {
+    pointSeconds = pointSeconds.map((_v, i) => {
       return hourSeconds * i;
     });
 
@@ -570,7 +570,7 @@ export default class App extends React.Component<AppProperties, AppState> {
         (result) => {
           const payloads = result.Payloads as any[];
 
-          const devicesReadingcharts = payloads.reduce((dr, payload, i) => {
+          const devicesReadingcharts = payloads.reduce((dr, payload, _i) => {
             const newDr = {
               ...dr,
             };
@@ -654,7 +654,7 @@ export default class App extends React.Component<AppProperties, AppState> {
           const variableResults = result as any[];
 
           const variableCharts = variableResults.reduce(
-            (vc, variableResult, i) => {
+            (vc, variableResult, _i) => {
               const newVc = {
                 ...vc,
               };
@@ -731,7 +731,7 @@ export default class App extends React.Component<AppProperties, AppState> {
         (result) => {
           const variables = result as any[];
 
-          const variableOptions = variables.reduce((vars, variable, i) => {
+          const variableOptions = variables.reduce((vars, variable, _i) => {
             const newVar: any = {
               ...vars,
             };

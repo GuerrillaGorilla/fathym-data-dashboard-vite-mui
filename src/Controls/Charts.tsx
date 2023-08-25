@@ -2,7 +2,6 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Line, Bar } from 'react-chartjs-2';
 import Card from '@mui/material/Card';
-import Draggable from 'react-draggable';
 
 class ChartsProperties {
   public charts?: { [lookup: string]: ChartState };

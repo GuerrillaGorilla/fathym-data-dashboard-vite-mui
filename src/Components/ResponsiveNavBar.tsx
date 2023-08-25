@@ -138,7 +138,7 @@ const ResponsiveNavBar: React.FC = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Fathym" src="/static/images/avatar/1.jpg" />
+                <Avatar alt="Fathym" src="" />
               </IconButton>
             </Tooltip>
             <Menu
